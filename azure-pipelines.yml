@@ -12,3 +12,18 @@ steps:
     Contents: '**/*jar-with-dependencies.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
+
+- task: Docker@1
+  displayName: 'Build an image'
+  inputs:
+    azureSubscriptionEndpoint: 'vintomdevops - Azure'
+    azureContainerRegistry: vintomdevopsacr.azurecr.io
+    imageName: 'vintomdevops:$(Build.BuildId)'
+
+- task: Docker@1
+  displayName: 'Push an image'
+  inputs:
+    azureSubscriptionEndpoint: 'vintomdevops - Azure'
+    azureContainerRegistry: vintomdevopsacr.azurecr.io
+    command: 'Push an image'
+    imageName: 'vintomdevops:$(Build.BuildId)'
