@@ -4,3 +4,12 @@ steps:
   inputs:
     mavenPomFile: Application/pom.xml
     testResultsFiles: '**/TEST*.xml'
+
+steps:
+- task: CopyFiles@2
+  displayName: 'Copy functional test jar to: $(TargetFolder)'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/*jar-with-dependencies.jar'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
