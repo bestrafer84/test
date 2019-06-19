@@ -1,9 +1,6 @@
+steps:
 - task: Maven@3
+  displayName: 'Maven $(mavenPOMFile)'
   inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    sonarQubeRunAnalysis: false
+    mavenPomFile: Application/pom.xml
+    testResultsFiles: '**/TEST*.xml'
