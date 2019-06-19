@@ -5,7 +5,6 @@ steps:
     mavenPomFile: Application/pom.xml
     testResultsFiles: '**/TEST*.xml'
 
-steps:
 - task: CopyFiles@2
   displayName: 'Copy functional test jar to: $(TargetFolder)'
   inputs:
