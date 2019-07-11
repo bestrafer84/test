@@ -15,5 +15,29 @@
         <module>sampleWebApp</module>
         <module>sampleWebApp.FunctionalTests</module>
     </modules>
+<repositories>	
+<repository>
+  <id>dev-azure-com-vintom-test-test</id>
+  <url>https://pkgs.dev.azure.com/vintom-test/_packaging/test/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</repositories>	
 
-</project>
+<distributionManagement>
+<repository>
+  <id>dev-azure-com-vintom-test-test</id>
+  <url>https://pkgs.dev.azure.com/vintom-test/_packaging/test/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</distributionManagement>	
+	</project>
